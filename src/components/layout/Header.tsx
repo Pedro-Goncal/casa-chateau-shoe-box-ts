@@ -48,20 +48,7 @@ export function Header() {
             : "bg-gradient-to-b from-[rgba(20,18,16,0.45)] to-transparent py-5",
       )}
     >
-      <div className="section-shell flex items-center justify-between gap-4">
-        <a
-          href="#top"
-          onClick={() => setMenuOpen(false)}
-          className={cn(
-            "display-title text-lg transition md:text-xl",
-            onHero
-              ? "text-white hover:text-white/80"
-              : "text-pacific hover:text-adobe",
-          )}
-        >
-          {siteConfig.name}
-        </a>
-
+      <div className="section-shell flex items-center justify-end gap-4 lg:justify-between">
         <nav aria-label="Primary" className="hidden items-center gap-6 lg:flex">
           {copy.nav.map((item) => (
             <a

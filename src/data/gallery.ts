@@ -551,6 +551,10 @@ export function getImagesByFolder(folder: string): GalleryImage[] {
   });
 }
 
+export function getOrderedGalleryImages(): GalleryImage[] {
+  return galleryGroups.flatMap((group) => getImagesByFolder(group.folder));
+}
+
 export function getImageById(id: string): GalleryImage | undefined {
   return galleryImages.find((image) => image.id === id);
 }

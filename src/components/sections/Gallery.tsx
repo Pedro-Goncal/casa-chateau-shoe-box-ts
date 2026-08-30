@@ -10,7 +10,7 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 
 export function Gallery() {
   const { copy, t } = useLanguage();
-  const { openCategory } = useLightbox();
+  const { openById } = useLightbox();
 
   const groups = galleryGroups
     .map((group) => ({
@@ -53,7 +53,7 @@ export function Gallery() {
                   <Reveal key={image.id} variant="media" delay={index * 0.06}>
                     <button
                       type="button"
-                      onClick={() => openCategory(group.folder, image.id)}
+                      onClick={() => openById(image.id)}
                       className="group relative aspect-square w-full overflow-hidden rounded-xl bg-sand/40"
                       aria-label={`${t(copy.gallery.openPhoto)}: ${t(image.alt)}`}
                     >

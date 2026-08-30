@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { siteConfig } from "@/config/site";
-import { getImageById, getImageIndexById } from "@/data/gallery";
+import { getImageById } from "@/data/gallery";
 import { useLanguage } from "@/i18n/language-provider";
 import { useLightbox } from "@/components/lightbox/LightboxProvider";
 import { Reveal } from "@/components/ui/Reveal";
@@ -10,7 +10,7 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 
 export function Welcome() {
   const { copy, t } = useLanguage();
-  const { openAt } = useLightbox();
+  const { openById } = useLightbox();
   const image = getImageById(copy.welcome.imageId);
 
   return (
@@ -23,7 +23,7 @@ export function Welcome() {
           <Reveal variant="media">
             <button
               type="button"
-              onClick={() => openAt(getImageIndexById(image.id))}
+              onClick={() => openById(image.id)}
               className="group relative aspect-[4/3] w-full overflow-hidden rounded-2xl"
               aria-label={t(copy.gallery.openPhoto)}
             >

@@ -7,14 +7,19 @@ import {
   useMemo,
   useState,
 } from "react";
-import Lightbox from "yet-another-react-lightbox";
+import Lightbox, {
+  NextIcon,
+  PreviousIcon,
+  useController,
+  useNavigationState,
+} from "yet-another-react-lightbox";
 import Captions from "yet-another-react-lightbox/plugins/captions";
 import Counter from "yet-another-react-lightbox/plugins/counter";
 import "yet-another-react-lightbox/plugins/captions.css";
 import "yet-another-react-lightbox/plugins/counter.css";
 import {
-  galleryImages,
   getImagesByFolder,
+  getOrderedGalleryImages,
   type GalleryImage,
 } from "@/data/gallery";
 import { useLanguage } from "@/i18n/language-provider";
@@ -26,6 +31,34 @@ type LightboxContextValue = {
 };
 
 const LightboxContext = createContext<LightboxContextValue | null>(null);
+
+function LightboxMobileNav({ locale }: { locale: "en" | "es" }) {
+  const { prev, next } = useController();
+  const { prevDisabled, nextDisabled } = useNavigationState();
+
+  return (
+    <div className="lightbox-mobile-nav">
+      <button
+        type="button"
+        className="lightbox-mobile-nav__btn"
+        aria-label={locale === "es" ? "Anterior" : "Previous"}
+        onClick={prev}
+        disabled={prevDisabled}
+      >
+        <PreviousIcon />
+      </button>
+      <button
+        type="button"
+        className="lightbox-mobile-nav__btn"
+        aria-label={locale === "es" ? "Siguiente" : "Next"}
+        onClick={next}
+        disabled={nextDisabled}
+      >
+        <NextIcon />
+      </button>
+    </div>
+  );
+}
 
 function toSlides(images: GalleryImage[], locale: "en" | "es") {
   return images.map((image) => ({
@@ -40,12 +73,10 @@ function toSlides(images: GalleryImage[], locale: "en" | "es") {
 export function LightboxProvider({ children }: { children: React.ReactNode }) {
   const { locale } = useLanguage();
   const [index, setIndex] = useState(-1);
-  const [activeImages, setActiveImages] = useState(galleryImages);
+  const allImages = useMemo(() => getOrderedGalleryImages(), []);
+  const [activeImages, setActiveImages] = useState(allImages);
 
-  const allSlides = useMemo(
-    () => toSlides(galleryImages, locale),
-    [locale],
-  );
+  const allSlides = useMemo(() => toSlides(allImages, locale), [allImages, locale]);
 
   const slides = useMemo(
     () => toSlides(activeImages, locale),
@@ -53,17 +84,17 @@ export function LightboxProvider({ children }: { children: React.ReactNode }) {
   );
 
   const openAt = useCallback((nextIndex: number) => {
-    setActiveImages(galleryImages);
+    setActiveImages(allImages);
     setIndex(nextIndex);
-  }, []);
+  }, [allImages]);
 
   const openById = useCallback((id: string) => {
-    const nextIndex = galleryImages.findIndex((image) => image.id === id);
+    const nextIndex = allImages.findIndex((image) => image.id === id);
     if (nextIndex >= 0) {
-      setActiveImages(galleryImages);
+      setActiveImages(allImages);
       setIndex(nextIndex);
     }
-  }, []);
+  }, [allImages]);
 
   const openCategory = useCallback((folder: string, imageId: string) => {
     const filtered = getImagesByFolder(folder);
@@ -92,6 +123,9 @@ export function LightboxProvider({ children }: { children: React.ReactNode }) {
         animation={{ fade: 320, swipe: 280 }}
         controller={{ closeOnBackdropClick: true }}
         captions={{ showToggle: false, descriptionTextAlign: "center" }}
+        render={{
+          controls: () => <LightboxMobileNav locale={locale} />,
+        }}
         styles={{
           container: { backgroundColor: "rgba(247, 241, 232, 0.92)" },
         }}

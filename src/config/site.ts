@@ -1,5 +1,4 @@
 export const siteConfig = {
-  name: "Casa Chatou",
   tagline: {
     en: "A quiet house between desert and Pacific.",
     es: "Una casa tranquila entre el desierto y el Pacífico.",
