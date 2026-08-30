@@ -1,26 +1,237 @@
 @import "tailwindcss";
+@import "yet-another-react-lightbox/styles.css";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --color-page: #f7f1e8;
+  --color-surface: #fff9f2;
+  --color-sand: #e8dcc8;
+  --color-adobe: #c56a4a;
+  --color-adobe-soft: #d4846a;
+  --color-pacific: #2a3d3a;
+  --color-body: #3f3a34;
+  --color-muted: #7a7268;
+  --color-overlay: rgba(42, 35, 30, 0.55);
+  --color-overlay-light: rgba(247, 241, 232, 0.88);
+  --header-height: 4.5rem;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-page: var(--color-page);
+  --color-surface: var(--color-surface);
+  --color-sand: var(--color-sand);
+  --color-adobe: var(--color-adobe);
+  --color-adobe-soft: var(--color-adobe-soft);
+  --color-pacific: var(--color-pacific);
+  --color-body: var(--color-body);
+  --color-muted: var(--color-muted);
+  --font-display: var(--font-fraunces);
+  --font-body: var(--font-figtree);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  min-height: 100vh;
+  background: var(--color-page);
+  color: var(--color-body);
+  font-family: var(--font-figtree), system-ui, sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.7;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: color-mix(in srgb, var(--color-adobe) 25%, white);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-adobe);
+  outline-offset: 3px;
+}
+
+/* Layered so Tailwind utilities (which sit in the later `utilities` layer)
+   can override these defaults — e.g. `text-white` on the hero title. */
+@layer components {
+  .skip-link {
+    position: absolute;
+    left: 1rem;
+    top: -100%;
+    z-index: 100;
+    border-radius: 9999px;
+    background: var(--color-surface);
+    color: var(--color-pacific);
+    padding: 0.75rem 1.25rem;
+    font-size: 0.95rem;
+    font-weight: 500;
+    box-shadow: 0 8px 30px rgba(42, 35, 30, 0.12);
+    transition: top 0.2s ease;
+  }
+
+  .skip-link:focus {
+    top: 1rem;
+  }
+
+  .section-shell {
+    width: 100%;
+    max-width: 78rem;
+    margin-inline: auto;
+    padding-inline: 1.5rem;
+  }
+
+  @media (min-width: 768px) {
+    .section-shell {
+      padding-inline: 2.5rem;
+    }
+  }
+
+  @media (min-width: 1280px) {
+    .section-shell {
+      padding-inline: 3rem;
+    }
+  }
+
+  .display-title {
+    font-family: var(--font-fraunces), Georgia, serif;
+    color: var(--color-pacific);
+    letter-spacing: -0.02em;
+    line-height: 1.08;
+  }
+
+  .eyebrow {
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--color-adobe);
+  }
+}
+
+@keyframes kenBurns {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.06);
+  }
+}
+
+.hero-ken-burns {
+  animation: kenBurns 22s ease-out forwards;
+  transform-origin: center;
+}
+
+@keyframes scrollCue {
+  0%,
+  100% {
+    transform: translateY(0);
+    opacity: 0.55;
+  }
+  50% {
+    transform: translateY(8px);
+    opacity: 1;
+  }
+}
+
+.scroll-cue {
+  animation: scrollCue 2.8s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .hero-ken-burns,
+  .scroll-cue {
+    animation: none !important;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Lightroom-style lightbox */
+.yarl__root {
+  --yarl__color_backdrop: rgba(247, 241, 232, 0.92);
+  --yarl__color_button: var(--color-pacific);
+  --yarl__color_button_active: var(--color-adobe);
+  /* Caption defaults assume a black backdrop; ours is cream. */
+  --yarl__slide_captions_container_background: rgba(247, 241, 232, 0.92);
+  --yarl__slide_description_color: var(--color-body);
+  --yarl__slide_title_color: var(--color-pacific);
+}
+
+.yarl__container {
+  backdrop-filter: blur(18px);
+}
+
+.yarl__slide_image {
+  border-radius: 0.35rem;
+  box-shadow: 0 30px 80px rgba(42, 35, 30, 0.18);
+}
+
+.yarl__button {
+  filter: none;
+  opacity: 0.85;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.yarl__button:hover {
+  opacity: 1;
+  transform: scale(1.04);
+}
+
+.yarl__navigation_prev,
+.yarl__navigation_next {
+  background: color-mix(in srgb, var(--color-surface) 82%, transparent);
+  border: 1px solid color-mix(in srgb, var(--color-sand) 70%, transparent);
+  border-radius: 9999px;
+  width: 3.25rem;
+  height: 3.25rem;
+  margin-inline: 0.75rem;
+}
+
+.yarl__toolbar {
+  padding-top: 1rem;
+}
+
+.yarl__slide_description {
+  font-family: var(--font-figtree), system-ui, sans-serif;
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
+  text-shadow: none;
+}
+
+.yarl__counter {
+  color: var(--color-muted);
+  font-size: 0.85rem;
 }
