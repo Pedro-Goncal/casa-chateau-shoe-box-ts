@@ -33,7 +33,7 @@ export function Spaces() {
             if (!image) return null;
 
             return (
-              <Reveal key={space.id} delay={(index % 5) * 0.04}>
+              <Reveal key={space.id} variant="media" delay={(index % 4) * 0.07}>
                 <button
                   type="button"
                   onClick={() => {
@@ -49,7 +49,7 @@ export function Spaces() {
                       alt={t(image.alt)}
                       fill
                       sizes="(max-width: 640px) 50vw, 20vw"
-                      className="object-cover transition duration-500 group-hover:scale-[1.04]"
+                      className="object-cover transition-transform duration-500 group-hover:scale-[1.04]"
                     />
                   </div>
                   <p className="mt-3 text-center text-sm font-medium text-pacific">

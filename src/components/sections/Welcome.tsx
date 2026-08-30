@@ -20,7 +20,7 @@ export function Welcome() {
     >
       <div className="section-shell grid items-center gap-10 lg:grid-cols-2 lg:gap-14">
         {image ? (
-          <Reveal>
+          <Reveal variant="media">
             <button
               type="button"
               onClick={() => openAt(getImageIndexById(image.id))}
@@ -32,18 +32,22 @@ export function Welcome() {
                 alt={t(image.alt)}
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
-                className="object-cover transition duration-700 group-hover:scale-[1.03]"
+                className="object-cover transition-transform duration-700 group-hover:scale-[1.03]"
               />
             </button>
           </Reveal>
         ) : null}
 
-        <Reveal delay={0.08}>
-          <SectionHeading title={t(copy.welcome.title)} />
-          <p className="mt-6 text-lg leading-relaxed text-body/88">
-            {t(copy.welcome.paragraph)}
-          </p>
-        </Reveal>
+        <div>
+          <Reveal>
+            <SectionHeading title={t(copy.welcome.title)} />
+          </Reveal>
+          <Reveal delay={0.12}>
+            <p className="mt-6 text-lg leading-relaxed text-body/88">
+              {t(copy.welcome.paragraph)}
+            </p>
+          </Reveal>
+        </div>
       </div>
     </section>
   );

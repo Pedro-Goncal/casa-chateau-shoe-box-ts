@@ -45,27 +45,28 @@ export function RentalDetails() {
     >
       <div className="section-shell">
         <Reveal>
-          <div className="text-center">
-            <SectionHeading
-              title={t(copy.rental.title)}
-              align="center"
-              className="mx-auto"
-            />
+          <SectionHeading
+            title={t(copy.rental.title)}
+            align="center"
+            className="mx-auto"
+          >
             <div
               className="mx-auto mt-8 h-px w-20 bg-adobe/35 md:w-28"
               aria-hidden="true"
             />
-          </div>
+          </SectionHeading>
         </Reveal>
 
-        <Reveal delay={0.06}>
+        <Reveal>
           <dl className="mx-auto mt-10 max-w-3xl overflow-hidden rounded-2xl border border-sand/60 bg-surface md:mt-12">
             {copy.rental.items.map((item, index) => {
               const Icon = iconMap[item.id] ?? CalendarDays;
 
               return (
-                <div
+                <Reveal
                   key={item.id}
+                  variant="fade"
+                  delay={index * 0.045}
                   className={`flex flex-col gap-1.5 px-6 py-5 md:flex-row md:items-center md:gap-6 md:px-8 ${
                     index > 0 ? "border-t border-sand/50" : ""
                   }`}
@@ -85,7 +86,7 @@ export function RentalDetails() {
                   <dd className="pl-11 text-[0.95rem] leading-6 text-body/90 md:pl-0">
                     {t(item.value)}
                   </dd>
-                </div>
+                </Reveal>
               );
             })}
           </dl>

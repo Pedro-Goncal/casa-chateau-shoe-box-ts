@@ -26,32 +26,32 @@ export function Gallery() {
     >
       <div className="section-shell">
         <Reveal>
-          <div className="mx-auto max-w-3xl text-center">
-            <SectionHeading
-              title={t(copy.gallery.title)}
-              align="center"
-              className="mx-auto"
-            />
+          <SectionHeading
+            title={t(copy.gallery.title)}
+            align="center"
+            className="mx-auto"
+          >
             <div
               className="mx-auto mt-8 h-px w-20 bg-adobe/35 md:mt-10 md:w-28"
               aria-hidden="true"
             />
-          </div>
+          </SectionHeading>
         </Reveal>
 
         <div className="mt-16 space-y-20 md:mt-20 md:space-y-28">
-          {groups.map((group, groupIndex) => (
-            <Reveal key={group.folder} delay={groupIndex * 0.04}>
-              <div>
+          {groups.map((group) => (
+            <div key={group.folder}>
+              <Reveal>
                 <div className="mb-8 border-b border-sand/70 pb-4 md:mb-10 md:pb-5">
                   <h3 className="display-title text-2xl text-pacific md:text-3xl">
                     {t(group.label)}
                   </h3>
                 </div>
-                <div className="grid grid-cols-2 gap-4 md:grid-cols-3 md:gap-5 lg:grid-cols-4">
-                  {group.photos.map((image) => (
+              </Reveal>
+              <div className="grid grid-cols-2 gap-4 md:grid-cols-3 md:gap-5 lg:grid-cols-4">
+                {group.photos.map((image, index) => (
+                  <Reveal key={image.id} variant="media" delay={index * 0.06}>
                     <button
-                      key={image.id}
                       type="button"
                       onClick={() => openCategory(group.folder, image.id)}
                       className="group relative aspect-square w-full overflow-hidden rounded-xl bg-sand/40"
@@ -62,13 +62,13 @@ export function Gallery() {
                         alt={t(image.alt)}
                         fill
                         sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
-                        className="object-cover transition duration-500 group-hover:scale-[1.04]"
+                        className="object-cover transition-transform duration-500 group-hover:scale-[1.04]"
                       />
                     </button>
-                  ))}
-                </div>
+                  </Reveal>
+                ))}
               </div>
-            </Reveal>
+            </div>
           ))}
         </div>
       </div>

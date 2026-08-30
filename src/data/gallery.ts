@@ -7,14 +7,16 @@ export type GalleryImage = {
   caption: Record<"en" | "es", string>;
   photographer: string;
   featured?: boolean;
+  folder?: string;
 };
 
 export const galleryImages: GalleryImage[] = [
   {
     id: "space-bathroom",
-    src: "/images/bathroom/IMG_0121.jpeg",
-    width: 3024,
-    height: 4032,
+    src: "https://elexpatinsidermexico.com/wp-content/uploads/2026/08/IMG_0121-scaled.jpeg",
+    width: 1920,
+    height: 2560,
+    folder: "bathroom",
     alt: {
       en: "Bathroom with concrete vanity, round mirror, and green tile shower",
       es: "Baño con lavabo de concreto, espejo redondo y regadera de azulejo verde"
@@ -27,9 +29,10 @@ export const galleryImages: GalleryImage[] = [
   },
   {
     id: "bathroom-img_0116",
-    src: "/images/bathroom/IMG_0116.jpeg",
-    width: 3024,
-    height: 4032,
+    src: "https://elexpatinsidermexico.com/wp-content/uploads/2026/08/IMG_0116-scaled.jpeg",
+    width: 1920,
+    height: 2560,
+    folder: "bathroom",
     alt: {
       en: "Walk-in shower with green tile and glass surround",
       es: "Regadera con azulejo verde y cancel de cristal"
@@ -42,9 +45,10 @@ export const galleryImages: GalleryImage[] = [
   },
   {
     id: "bathroom-img_0115",
-    src: "/images/bathroom/IMG_0115.jpeg",
-    width: 3024,
-    height: 4032,
+    src: "https://elexpatinsidermexico.com/wp-content/uploads/2026/08/IMG_0115-scaled.jpeg",
+    width: 1920,
+    height: 2560,
+    folder: "bathroom",
     alt: {
       en: "Bathroom at Casa Chatou",
       es: "Baño en Casa Chatou"
@@ -57,9 +61,10 @@ export const galleryImages: GalleryImage[] = [
   },
   {
     id: "space-kitchen",
-    src: "/images/kitchen/IMG_0124.jpeg",
-    width: 3024,
-    height: 4032,
+    src: "https://elexpatinsidermexico.com/wp-content/uploads/2026/08/IMG_0124-scaled.jpeg",
+    width: 1920,
+    height: 2560,
+    folder: "kitchen",
     alt: {
       en: "Concrete island with bar stools under pendant lights",
       es: "Isla de concreto con bancos bajo lámparas colgantes"
@@ -73,9 +78,10 @@ export const galleryImages: GalleryImage[] = [
   },
   {
     id: "kitchen-img_0123",
-    src: "/images/kitchen/IMG_0123.jpeg",
-    width: 3024,
-    height: 4032,
+    src: "https://elexpatinsidermexico.com/wp-content/uploads/2026/08/IMG_0123-scaled.jpeg",
+    width: 1920,
+    height: 2560,
+    folder: "kitchen",
     alt: {
       en: "Kitchen with concrete island and wood cabinetry",
       es: "Cocina con isla de concreto y carpintería de madera"
@@ -88,9 +94,10 @@ export const galleryImages: GalleryImage[] = [
   },
   {
     id: "kitchen-img_0127",
-    src: "/images/kitchen/IMG_0127.jpeg",
-    width: 3024,
-    height: 4032,
+    src: "https://elexpatinsidermexico.com/wp-content/uploads/2026/08/IMG_0127-scaled.jpeg",
+    width: 1920,
+    height: 2560,
+    folder: "kitchen",
     alt: {
       en: "Kitchen at Casa Chatou",
       es: "Cocina en Casa Chatou"
@@ -103,9 +110,10 @@ export const galleryImages: GalleryImage[] = [
   },
   {
     id: "kitchen-img_0130",
-    src: "/images/kitchen/IMG_0130.jpeg",
-    width: 3024,
-    height: 4032,
+    src: "https://elexpatinsidermexico.com/wp-content/uploads/2026/08/IMG_0130-scaled.jpeg",
+    width: 1920,
+    height: 2560,
+    folder: "kitchen",
     alt: {
       en: "Kitchen at Casa Chatou",
       es: "Cocina en Casa Chatou"
@@ -118,9 +126,10 @@ export const galleryImages: GalleryImage[] = [
   },
   {
     id: "space-living",
-    src: "/images/living-room-office/IMG_0205.jpeg",
-    width: 4032,
-    height: 3024,
+    src: "https://elexpatinsidermexico.com/wp-content/uploads/2026/08/IMG_0205-scaled.jpeg",
+    width: 2560,
+    height: 1920,
+    folder: "living-room-office",
     alt: {
       en: "TV room and office with built-in desk",
       es: "Sala de TV y oficina con escritorio integrado"
@@ -133,9 +142,10 @@ export const galleryImages: GalleryImage[] = [
   },
   {
     id: "living-room-office-img_0207",
-    src: "/images/living-room-office/IMG_0207.jpeg",
-    width: 4032,
-    height: 3024,
+    src: "https://elexpatinsidermexico.com/wp-content/uploads/2026/08/IMG_0207-scaled.jpeg",
+    width: 2560,
+    height: 1920,
+    folder: "living-room-office",
     alt: {
       en: "Office and TV room at Casa Chatou",
       es: "Oficina y sala de TV en Casa Chatou"
@@ -148,9 +158,10 @@ export const galleryImages: GalleryImage[] = [
   },
   {
     id: "living-room-office-img_0210",
-    src: "/images/living-room-office/IMG_0210.jpeg",
-    width: 4032,
-    height: 3024,
+    src: "https://elexpatinsidermexico.com/wp-content/uploads/2026/08/IMG_0210-scaled.jpeg",
+    width: 2560,
+    height: 1920,
+    folder: "living-room-office",
     alt: {
       en: "Office and TV room at Casa Chatou",
       es: "Oficina y sala de TV en Casa Chatou"
@@ -163,9 +174,10 @@ export const galleryImages: GalleryImage[] = [
   },
   {
     id: "living-room-office-img_0211",
-    src: "/images/living-room-office/IMG_0211.jpeg",
-    width: 3024,
-    height: 4032,
+    src: "https://elexpatinsidermexico.com/wp-content/uploads/2026/08/IMG_0211-scaled.jpeg",
+    width: 1920,
+    height: 2560,
+    folder: "living-room-office",
     alt: {
       en: "Office and TV room at Casa Chatou",
       es: "Oficina y sala de TV en Casa Chatou"
@@ -178,9 +190,10 @@ export const galleryImages: GalleryImage[] = [
   },
   {
     id: "space-bedroom",
-    src: "/images/master-bedroom/IMG_0107.jpeg",
-    width: 3024,
-    height: 4032,
+    src: "https://elexpatinsidermexico.com/wp-content/uploads/2026/08/IMG_0107-scaled.jpeg",
+    width: 1920,
+    height: 2560,
+    folder: "master-bedroom",
     alt: {
       en: "Bedroom with floor-to-ceiling closets",
       es: "Recámara con clósets de piso a techo"
@@ -192,25 +205,11 @@ export const galleryImages: GalleryImage[] = [
     photographer: "Casa Chatou"
   },
   {
-    id: "master-bedroom-img_0105",
-    src: "/images/master-bedroom/IMG_0105.jpeg",
-    width: 3024,
-    height: 4032,
-    alt: {
-      en: "Bed facing sliding doors that open onto the patio and desert",
-      es: "Cama frente a puertas corredizas que abren al patio y al desierto"
-    },
-    caption: {
-      en: "Bedroom",
-      es: "Recámara"
-    },
-    photographer: "Casa Chatou"
-  },
-  {
     id: "master-bedroom-img_0111",
-    src: "/images/master-bedroom/IMG_0111.jpeg",
-    width: 3024,
-    height: 4032,
+    src: "https://elexpatinsidermexico.com/wp-content/uploads/2026/08/IMG_0111-scaled.jpeg",
+    width: 1920,
+    height: 2560,
+    folder: "master-bedroom",
     alt: {
       en: "Bedroom at Casa Chatou",
       es: "Recámara en Casa Chatou"
@@ -222,10 +221,26 @@ export const galleryImages: GalleryImage[] = [
     photographer: "Casa Chatou"
   },
   {
+    id: "master-bedroom-img_0105",
+    src: "https://elexpatinsidermexico.com/wp-content/uploads/2026/08/IMG_0105-scaled.jpeg",
+    width: 1920,
+    height: 2560,
+    folder: "master-bedroom",
+    alt: {
+      en: "Bed facing sliding doors that open onto the patio and desert",
+      es: "Cama frente a puertas corredizas que abren al patio y al desierto"
+    },
+    caption: {
+      en: "Bedroom",
+      es: "Recámara"
+    },
+    photographer: "Casa Chatou"
+  },
+  {
     id: "hero-main",
-    src: "/images/outdoors/IMG_0136-2.jpeg",
-    width: 4032,
-    height: 3024,
+    src: "https://elexpatinsidermexico.com/wp-content/uploads/2026/08/IMG_0136-2-scaled.jpeg",
+    width: 2560,
+    height: 1920,
     alt: {
       en: "Casa Chatou exterior at night with lit patio and kitchen",
       es: "Exterior de Casa Chatou de noche con patio iluminado y cocina"
@@ -238,25 +253,11 @@ export const galleryImages: GalleryImage[] = [
     featured: true
   },
   {
-    id: "space-outdoors",
-    src: "/images/outdoors/IMG_8983.jpeg",
-    width: 3024,
-    height: 4032,
-    alt: {
-      en: "Woven patio furniture under the covered terrace with desert views",
-      es: "Muebles de mimbre en la terraza cubierta con vista al desierto"
-    },
-    caption: {
-      en: "Evenings on the patio",
-      es: "Tardes en el patio"
-    },
-    photographer: "Casa Chatou"
-  },
-  {
     id: "welcome-outdoors",
-    src: "/images/outdoors/IMG_0250.jpeg",
-    width: 4032,
-    height: 3024,
+    src: "https://elexpatinsidermexico.com/wp-content/uploads/2026/08/IMG_0250-scaled.jpeg",
+    width: 2560,
+    height: 1920,
+    folder: "outdoors",
     alt: {
       en: "Covered patio with bamboo ceiling looking out to the Pacific at golden hour",
       es: "Patio cubierto con techo de bambú con vista al Pacífico a la hora dorada"
@@ -268,13 +269,62 @@ export const galleryImages: GalleryImage[] = [
     photographer: "Casa Chatou"
   },
   {
-    id: "outdoors-img_0251",
-    src: "/images/outdoors/IMG_0251.jpeg",
-    width: 4032,
-    height: 3024,
+    id: "outdoors-img_0264",
+    src: "https://elexpatinsidermexico.com/wp-content/uploads/2026/08/IMG_0264-scaled.jpeg",
+    width: 2560,
+    height: 1920,
+    folder: "outdoors",
     alt: {
-      en: "Covered patio with woven chairs facing the sunset",
-      es: "Patio cubierto con sillas de mimbre frente al atardecer"
+      en: "Outdoor patio at Casa Chatou",
+      es: "Patio exterior en Casa Chatou"
+    },
+    caption: {
+      en: "Outdoor patio",
+      es: "Patio exterior"
+    },
+    photographer: "Casa Chatou"
+  },
+  {
+    id: "outdoors-img_0271",
+    src: "https://elexpatinsidermexico.com/wp-content/uploads/2026/08/IMG_0271-scaled.jpeg",
+    width: 2560,
+    height: 1920,
+    folder: "outdoors",
+    alt: {
+      en: "Outdoor patio at Casa Chatou",
+      es: "Patio exterior en Casa Chatou"
+    },
+    caption: {
+      en: "Outdoor patio",
+      es: "Patio exterior"
+    },
+    photographer: "Casa Chatou"
+  },
+  {
+    id: "space-outdoors",
+    src: "https://elexpatinsidermexico.com/wp-content/uploads/2026/08/IMG_8983-scaled.jpeg",
+    width: 1920,
+    height: 2560,
+    folder: "outdoors",
+    alt: {
+      en: "Woven patio furniture under the covered terrace with desert views",
+      es: "Muebles de mimbre en la terraza cubierta con vista al desierto"
+    },
+    caption: {
+      en: "Evenings on the patio",
+      es: "Tardes en el patio"
+    },
+    photographer: "Casa Chatou"
+  },
+  {
+    id: "outdoors-img_0255",
+    src: "https://elexpatinsidermexico.com/wp-content/uploads/2026/08/IMG_0255-scaled.jpeg",
+    width: 1920,
+    height: 2560,
+    folder: "outdoors",
+    alt: {
+      en: "Outdoor patio at Casa Chatou",
+      es: "Patio exterior en Casa Chatou"
     },
     caption: {
       en: "Outdoor patio",
@@ -284,9 +334,10 @@ export const galleryImages: GalleryImage[] = [
   },
   {
     id: "outdoors-img_20260613_073020",
-    src: "/images/outdoors/IMG_20260613_073020.jpg",
-    width: 4094,
-    height: 2615,
+    src: "https://elexpatinsidermexico.com/wp-content/uploads/2026/08/IMG_20260613_073020-scaled.jpg",
+    width: 2560,
+    height: 1635,
+    folder: "outdoors",
     alt: {
       en: "Exterior of the house with shade sails and rooftop pergola",
       es: "Exterior de la casa con velas de sombra y pérgola en la azotea"
@@ -299,9 +350,10 @@ export const galleryImages: GalleryImage[] = [
   },
   {
     id: "space-pantry",
-    src: "/images/pantry/IMG_0220.jpeg",
-    width: 3024,
-    height: 4032,
+    src: "https://elexpatinsidermexico.com/wp-content/uploads/2026/08/IMG_0220-scaled.jpeg",
+    width: 1920,
+    height: 2560,
+    folder: "pantry",
     alt: {
       en: "Pantry storage",
       es: "Despensa"
@@ -313,25 +365,11 @@ export const galleryImages: GalleryImage[] = [
     photographer: "Casa Chatou"
   },
   {
-    id: "sunset-img_20260108_175531",
-    src: "/images/sunset/IMG_20260108_175531.jpg",
-    width: 3648,
-    height: 2736,
-    alt: {
-      en: "Sunset at Casa Chatou",
-      es: "Atardecer en Casa Chatou"
-    },
-    caption: {
-      en: "Sunset",
-      es: "Atardecer"
-    },
-    photographer: "Casa Chatou"
-  },
-  {
     id: "sunset-img_7858",
-    src: "/images/sunset/IMG_7858.jpeg",
-    width: 4032,
-    height: 3024,
+    src: "https://elexpatinsidermexico.com/wp-content/uploads/2026/08/IMG_7858-scaled.jpeg",
+    width: 2560,
+    height: 1920,
+    folder: "sunset",
     alt: {
       en: "Red and orange sunset burning across the sky over the Pacific",
       es: "Atardecer rojo y naranja encendido sobre el Pacífico"
@@ -344,9 +382,10 @@ export const galleryImages: GalleryImage[] = [
   },
   {
     id: "sunset-img_9050",
-    src: "/images/sunset/IMG_9050.jpeg",
-    width: 4032,
-    height: 3024,
+    src: "https://elexpatinsidermexico.com/wp-content/uploads/2026/08/IMG_9050-scaled.jpeg",
+    width: 2560,
+    height: 1920,
+    folder: "sunset",
     alt: {
       en: "Sun setting behind mackerel clouds over the desert",
       es: "Sol ocultándose entre nubes onduladas sobre el desierto"
@@ -359,9 +398,10 @@ export const galleryImages: GalleryImage[] = [
   },
   {
     id: "sunset-img_9979",
-    src: "/images/sunset/IMG_9979.jpeg",
-    width: 3024,
-    height: 4032,
+    src: "https://elexpatinsidermexico.com/wp-content/uploads/2026/08/IMG_9979-scaled.jpeg",
+    width: 1920,
+    height: 2560,
+    folder: "sunset",
     alt: {
       en: "Orange sun dropping into the Pacific beyond the desert",
       es: "Sol naranja cayendo en el Pacífico más allá del desierto"
@@ -373,10 +413,27 @@ export const galleryImages: GalleryImage[] = [
     photographer: "Casa Chatou"
   },
   {
+    id: "sunset-img_20260108_175531",
+    src: "https://elexpatinsidermexico.com/wp-content/uploads/2026/08/IMG_20260108_175531-scaled.jpg",
+    width: 2560,
+    height: 1920,
+    folder: "sunset",
+    alt: {
+      en: "Sunset at Casa Chatou",
+      es: "Atardecer en Casa Chatou"
+    },
+    caption: {
+      en: "Sunset",
+      es: "Atardecer"
+    },
+    photographer: "Casa Chatou"
+  },
+  {
     id: "space-terrace",
-    src: "/images/terrace/IMG_0244.jpeg",
-    width: 4032,
-    height: 3024,
+    src: "https://elexpatinsidermexico.com/wp-content/uploads/2026/08/IMG_0270-scaled.jpeg",
+    width: 2560,
+    height: 1920,
+    folder: "terrace",
     alt: {
       en: "Rooftop terrace with ocean and mountain views",
       es: "Terraza con vista al mar y montañas"
@@ -389,13 +446,46 @@ export const galleryImages: GalleryImage[] = [
     featured: true
   },
   {
-    id: "terrace-img_0243",
-    src: "/images/terrace/IMG_0243.jpeg",
-    width: 3024,
-    height: 4032,
+    id: "terrace-img_0269",
+    src: "https://elexpatinsidermexico.com/wp-content/uploads/2026/08/IMG_0269-scaled.jpeg",
+    width: 2560,
+    height: 1920,
+    folder: "terrace",
     alt: {
-      en: "Rooftop terrace with solar panels and mountain views",
-      es: "Terraza en azotea con paneles solares y vista a la montaña"
+      en: "Rooftop terrace at Casa Chatou",
+      es: "Terraza en azotea en Casa Chatou"
+    },
+    caption: {
+      en: "Rooftop Terrace",
+      es: "Terraza en azotea"
+    },
+    photographer: "Casa Chatou"
+  },
+  {
+    id: "terrace-img_0268",
+    src: "https://elexpatinsidermexico.com/wp-content/uploads/2026/08/IMG_0268-scaled.jpeg",
+    width: 2560,
+    height: 1920,
+    folder: "terrace",
+    alt: {
+      en: "Rooftop terrace at Casa Chatou",
+      es: "Terraza en azotea en Casa Chatou"
+    },
+    caption: {
+      en: "Rooftop Terrace",
+      es: "Terraza en azotea"
+    },
+    photographer: "Casa Chatou"
+  },
+  {
+    id: "terrace-img_0244",
+    src: "https://elexpatinsidermexico.com/wp-content/uploads/2026/08/IMG_0244-scaled.jpeg",
+    width: 2560,
+    height: 1920,
+    folder: "terrace",
+    alt: {
+      en: "Rooftop terrace with ocean and mountain views",
+      es: "Terraza con vista al mar y montañas"
     },
     caption: {
       en: "Rooftop Terrace",
@@ -454,10 +544,11 @@ export const spaceImageFolders: Record<string, string> = {
 };
 
 export function getImagesByFolder(folder: string): GalleryImage[] {
-  return galleryImages.filter(
-    (image) =>
-      image.src.startsWith(`/images/${folder}/`) && image.id !== "hero-main",
-  );
+  return galleryImages.filter((image) => {
+    if (image.id === "hero-main") return false;
+    if (image.folder) return image.folder === folder;
+    return image.src.startsWith(`/images/${folder}/`);
+  });
 }
 
 export function getImageById(id: string): GalleryImage | undefined {

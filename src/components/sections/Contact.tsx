@@ -25,7 +25,7 @@ export function Contact() {
         </Reveal>
 
         <div className="mx-auto mt-10 grid max-w-2xl gap-4 md:grid-cols-2 md:gap-6">
-          <Reveal delay={0.05} className="h-full">
+          <Reveal className="h-full" delay={0.06}>
             <IconLink
               href={getPhoneUrl()}
               label={t(copy.contact.phoneLabel)}
@@ -33,7 +33,7 @@ export function Contact() {
               icon={Phone}
             />
           </Reveal>
-          <Reveal delay={0.1} className="h-full">
+          <Reveal className="h-full" delay={0.14}>
             <IconLink
               href={getWhatsAppUrl(locale)}
               label={t(copy.contact.whatsappLabel)}

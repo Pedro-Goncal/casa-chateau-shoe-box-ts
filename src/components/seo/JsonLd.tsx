@@ -1,4 +1,4 @@
-import { getSiteUrl, seo } from "@/config/seo";
+import { getAbsoluteAssetUrl, getSiteUrl, seo } from "@/config/seo";
 import { getPhoneUrl } from "@/config/site";
 
 export function JsonLd() {
@@ -34,7 +34,7 @@ export function JsonLd() {
         "@id": `${siteUrl}/#residence`,
         name: "Furnished home for lease in La Ahorcadita, Todos Santos",
         description: seo.description.en,
-        image: [`${siteUrl}${seo.ogImage.src}`],
+        image: [getAbsoluteAssetUrl(seo.ogImage.src)],
         telephone: phone,
         numberOfBedrooms: 1,
         numberOfBathroomsTotal: 1,
@@ -64,7 +64,7 @@ export function JsonLd() {
         name: seo.title.en,
         description: seo.description.en,
         url: siteUrl,
-        image: [`${siteUrl}${seo.ogImage.src}`],
+        image: [getAbsoluteAssetUrl(seo.ogImage.src)],
         leaseLength: {
           "@type": "QuantitativeValue",
           minValue: 6,

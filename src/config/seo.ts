@@ -15,9 +15,9 @@ export const seo = {
     "long-term rental Todos Santos",
   ],
   ogImage: {
-    src: "/images/outdoors/IMG_0136-2.jpeg",
-    width: 4032,
-    height: 3024,
+    src: "https://elexpatinsidermexico.com/wp-content/uploads/2026/08/IMG_0136-2-scaled.jpeg",
+    width: 2560,
+    height: 1920,
     alt: "Covered patio of a furnished home in La Ahorcadita, Todos Santos, at night",
   },
 } as const;
@@ -33,4 +33,9 @@ export function getSiteUrl() {
   if (preview) return `https://${preview}`;
 
   return "http://localhost:3000";
+}
+
+export function getAbsoluteAssetUrl(pathOrUrl: string) {
+  if (/^https?:\/\//.test(pathOrUrl)) return pathOrUrl;
+  return `${getSiteUrl()}${pathOrUrl}`;
 }

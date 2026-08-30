@@ -71,20 +71,19 @@ export function Amenities() {
     >
       <div className="section-shell">
         <Reveal>
-          <div className="text-center">
-            <SectionHeading
-              title={t(copy.amenities.title)}
-              align="center"
-              className="mx-auto"
-            />
+          <SectionHeading
+            title={t(copy.amenities.title)}
+            align="center"
+            className="mx-auto"
+          >
             <div
               className="mx-auto mt-8 h-px w-20 bg-adobe/35 md:w-28"
               aria-hidden="true"
             />
-          </div>
+          </SectionHeading>
         </Reveal>
 
-        <Reveal delay={0.06}>
+        <Reveal>
           <div className="mx-auto mt-8 flex w-fit items-center gap-2.5 rounded-full border border-sand/80 bg-page/70 px-5 py-2.5">
             <MapPin
               className="h-4 w-4 shrink-0 text-adobe"
@@ -104,8 +103,8 @@ export function Amenities() {
             return (
               <Reveal
                 key={group.id}
-                delay={Math.min(groupIndex, 3) * 0.06}
                 className="h-full"
+                delay={(groupIndex % 2) * 0.1}
               >
                 <div className="flex h-full flex-col rounded-2xl border border-sand/60 bg-page/60 p-7 md:p-8">
                   <h3 className="display-title text-lg text-pacific md:text-xl">

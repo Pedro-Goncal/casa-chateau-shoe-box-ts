@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { getSiteUrl, seo } from "@/config/seo";
+import { getAbsoluteAssetUrl, getSiteUrl, seo } from "@/config/seo";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const siteUrl = getSiteUrl();
@@ -10,7 +10,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 1,
-      images: [`${siteUrl}${seo.ogImage.src}`],
+      images: [getAbsoluteAssetUrl(seo.ogImage.src)],
     },
   ];
 }

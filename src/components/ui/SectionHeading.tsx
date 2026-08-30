@@ -6,6 +6,7 @@ type SectionHeadingProps = {
   intro?: string;
   align?: "left" | "center";
   className?: string;
+  children?: React.ReactNode;
 };
 
 export function SectionHeading({
@@ -14,6 +15,7 @@ export function SectionHeading({
   intro,
   align = "left",
   className,
+  children,
 }: SectionHeadingProps) {
   return (
     <div
@@ -32,6 +34,7 @@ export function SectionHeading({
           {intro}
         </p>
       ) : null}
+      {children}
     </div>
   );
 }
