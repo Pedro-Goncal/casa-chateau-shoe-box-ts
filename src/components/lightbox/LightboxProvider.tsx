@@ -42,7 +42,7 @@ function LightboxMobileNav({ locale }: { locale: "en" | "es" }) {
         type="button"
         className="lightbox-mobile-nav__btn"
         aria-label={locale === "es" ? "Anterior" : "Previous"}
-        onClick={prev}
+        onClick={() => prev()}
         disabled={prevDisabled}
       >
         <PreviousIcon />
@@ -51,7 +51,7 @@ function LightboxMobileNav({ locale }: { locale: "en" | "es" }) {
         type="button"
         className="lightbox-mobile-nav__btn"
         aria-label={locale === "es" ? "Siguiente" : "Next"}
-        onClick={next}
+        onClick={() => next()}
         disabled={nextDisabled}
       >
         <NextIcon />
