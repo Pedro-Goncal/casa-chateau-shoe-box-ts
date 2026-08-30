@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Figtree, Fraunces } from "next/font/google";
+import { getSiteUrl, seo } from "@/config/seo";
 import { LanguageProvider } from "@/i18n/language-provider";
 import { SmoothScroll } from "@/components/layout/SmoothScroll";
 import "./globals.css";
@@ -16,15 +17,43 @@ const figtree = Figtree({
   display: "swap",
 });
 
+const siteUrl = getSiteUrl();
+
 export const metadata: Metadata = {
-  title: "Casa Chatou — Todos Santos, Baja California Sur",
-  description:
-    "A quiet showcase home between the desert and the Pacific in Todos Santos, Baja California Sur.",
+  metadataBase: new URL(siteUrl),
+  title: seo.title.en,
+  description: seo.description.en,
+  keywords: [...seo.keywords],
+  applicationName: seo.title.en,
+  alternates: {
+    canonical: "/",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
   openGraph: {
-    title: "Casa Chatou — Todos Santos, Baja California Sur",
-    description:
-      "A quiet showcase home between the desert and the Pacific in Todos Santos, Baja California Sur.",
     type: "website",
+    locale: "en_US",
+    alternateLocale: ["es_MX"],
+    url: "/",
+    siteName: "La Ahorcadita, Todos Santos",
+    title: seo.title.en,
+    description: seo.description.en,
+    images: [
+      {
+        url: seo.ogImage.src,
+        width: seo.ogImage.width,
+        height: seo.ogImage.height,
+        alt: seo.ogImage.alt,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: seo.title.en,
+    description: seo.description.en,
+    images: [seo.ogImage.src],
   },
 };
 
