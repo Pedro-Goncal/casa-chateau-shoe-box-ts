@@ -32,7 +32,7 @@ export function JsonLd() {
       {
         "@type": ["House", "Accommodation"],
         "@id": `${siteUrl}/#residence`,
-        name: "Furnished home for lease in La Horcadita, Todos Santos",
+        name: "Furnished home for lease in La Ahorcadita, Todos Santos",
         description: seo.description.en,
         image: [getAbsoluteAssetUrl(seo.ogImage.src)],
         telephone: phone,

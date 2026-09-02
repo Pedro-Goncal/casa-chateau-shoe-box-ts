@@ -4,8 +4,8 @@ export const siteConfig = {
     es: "Una casa tranquila entre el desierto y el Pacífico.",
   },
   location: {
-    en: "La Horcadita, Todos Santos, Baja California Sur",
-    es: "La Horcadita, Todos Santos, Baja California Sur",
+    en: "La Ahorcadita, Todos Santos, Baja California Sur",
+    es: "La Ahorcadita, Todos Santos, Baja California Sur",
   },
   contact: {
     phone: "+1 845 906 9785",

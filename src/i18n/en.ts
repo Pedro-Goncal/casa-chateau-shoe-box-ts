@@ -3,12 +3,12 @@ import type { Translations } from "./types";
 export const en: Translations = {
   meta: {
     title: {
-      en: "Furnished Off-Grid Home for Lease in Todos Santos | La Horcadita",
-      es: "Casa off-grid amueblada en renta en Todos Santos | La Horcadita",
+      en: "Furnished Off-Grid Home for Lease in Todos Santos | La Ahorcadita",
+      es: "Casa off-grid amueblada en renta en Todos Santos | La Ahorcadita",
     },
     description: {
-      en: "1-bedroom furnished home in La Horcadita, Todos Santos. Off-grid solar, Starlink, and ocean views. $23,000 MXN/month, 6-month minimum. Available October 1, 2026.",
-      es: "Casa amueblada de 1 recámara en La Horcadita, Todos Santos. Solar off-grid, Starlink y vistas al océano. $23,000 MXN al mes, mínimo 6 meses. Disponible el 1 de octubre de 2026.",
+      en: "1-bedroom furnished home in La Ahorcadita, Todos Santos. Off-grid solar, Starlink, and ocean views. $23,000 MXN/month, 6-month minimum. Available October 1, 2026.",
+      es: "Casa amueblada de 1 recámara en La Ahorcadita, Todos Santos. Solar off-grid, Starlink y vistas al océano. $23,000 MXN al mes, mínimo 6 meses. Disponible el 1 de octubre de 2026.",
     },
   },
   skipToContent: {
@@ -57,8 +57,8 @@ export const en: Translations = {
       es: "Casa amueblada en renta",
     },
     location: {
-      en: "La Horcadita · Todos Santos\nBaja California Sur",
-      es: "La Horcadita · Todos Santos\nBaja California Sur",
+      en: "La Ahorcadita · Todos Santos\nBaja California Sur",
+      es: "La Ahorcadita · Todos Santos\nBaja California Sur",
     },
     scrollCue: {
       en: "Scroll",
@@ -129,8 +129,8 @@ export const en: Translations = {
       es: "Los detalles",
     },
     locationLabel: {
-      en: "La Horcadita · Todos Santos",
-      es: "La Horcadita · Todos Santos",
+      en: "La Ahorcadita · Todos Santos",
+      es: "La Ahorcadita · Todos Santos",
     },
     groups: [
       {
