@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     locale: "en_US",
     alternateLocale: ["es_MX"],
     url: "/",
-    siteName: "La Ahorcadita, Todos Santos",
+    siteName: "La Horcadita, Todos Santos",
     title: seo.title.en,
     description: seo.description.en,
     images: [
