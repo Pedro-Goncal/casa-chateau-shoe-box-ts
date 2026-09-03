@@ -7,8 +7,8 @@ export const en: Translations = {
       es: "Casa off-grid amueblada en renta en Todos Santos | La Ahorcadita",
     },
     description: {
-      en: "1-bedroom furnished home in La Ahorcadita, Todos Santos. Off-grid solar, Starlink, and ocean views. $23,000 MXN/month, 6-month minimum. Available October 1, 2026.",
-      es: "Casa amueblada de 1 recámara en La Ahorcadita, Todos Santos. Solar off-grid, Starlink y vistas al océano. $23,000 MXN al mes, mínimo 6 meses. Disponible el 1 de octubre de 2026.",
+      en: "Furnished home in La Ahorcadita, Todos Santos. Off-grid solar, Starlink, and ocean views. Available October 1, 2026.",
+      es: "Casa amueblada en La Ahorcadita, Todos Santos. Solar off-grid, Starlink y vistas al océano. Mínimo 6 meses. Disponible el 1 de octubre de 2026.",
     },
   },
   skipToContent: {
